@@ -162,6 +162,19 @@
 {
     if(to > [self count])
         to = [self count];
+    if(to < 0)
+        to = [self count] + to;
+    if(from < 0)
+        from = [self count] + from;
+    if(to < 0)
+        to = 0;
+    if(from < 0)
+        from = 0;
+    
+#ifdef DEBUG
+    NSLog(@"slice from %d to %d of %d", to, from, [self count]);
+#endif
+    
     if(to >= from)
         return [self subarrayWithRange:NSMakeRange(from, to - from)];
     else
