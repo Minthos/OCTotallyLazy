@@ -22,6 +22,7 @@
 - (NSMutableArray *)grouped:(int)n;
 - (id)head;
 - (Option *)headOption;
+- (NSMutableArray *)cat:(NSArray *)b; // same as join, but faster and less generic
 - (NSMutableArray *)join:(id<Enumerable>)toJoin;
 - (id)mapWithIndex:(id (^)(id, NSInteger))funcBlock;
 - (Pair *)partition:(PREDICATE)toJoin;
@@ -31,7 +32,7 @@
 - (Pair *)splitOn:(id)splitItem;
 - (Pair *)splitWhen:(PREDICATE)predicate;
 - (NSMutableArray *)tail;
-- (NSMutableArray *)take:(int)n;
+- (NSArray *)take:(int)n;
 - (NSMutableArray *)takeWhile:(PREDICATE)funcBlock;
 - (NSMutableArray *)takeRight:(int)n;
 - (NSArray *)slice:(int)from to:(int)to;

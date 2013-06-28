@@ -11,6 +11,7 @@
 #import "None.h"
 #import "NoSuchElementException.h"
 #import "NSArray+OCTotallyLazy.h"
+#import "NSMutableArray+OCTotallyLazy.h"
 #import "NSDictionary+OCTotallyLazy.h"
 #import "NSSet+OCTotallyLazy.h"
 #import "Numbers.h"

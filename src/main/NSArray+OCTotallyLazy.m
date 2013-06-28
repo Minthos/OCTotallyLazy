@@ -20,7 +20,16 @@
 }
 
 - (NSMutableArray *)filter:(BOOL (^)(id))filterBlock {
-    return [[[self asSequence] filter:filterBlock] asArray];
+    NSMutableArray *eax = [NSMutableArray arrayWithCapacity:[self count]];
+    for(id item in self)
+    {
+        BOOL result = filterBlock(item);
+        if(result)
+            [eax addObject:item];
+    }
+    return eax;
+    
+//    return [[[self asSequence] filter:filterBlock] asArray];
 }
 
 - (NSMutableArray *)flatMap:(id (^)(id))functorBlock {
@@ -92,12 +101,27 @@
     return [[self asSequence] headOption];
 }
 
+- (NSMutableArray *)cat:(NSArray *)b
+{
+    NSMutableArray *ret = [NSMutableArray arrayWithCapacity:[self count] + [b count]];
+    [ret addObjectsFromArray:self];
+    [ret addObjectsFromArray:b];
+    return ret;
+}
+
 - (NSMutableArray *)join:(id <Enumerable>)toJoin {
     return [[[self asSequence] join:toJoin] asArray];
 }
 
 - (id)map:(id (^)(id))funcBlock {
-    return [[[self asSequence] map:funcBlock] asArray];
+    NSMutableArray *eax = [NSMutableArray arrayWithCapacity:[self count]];
+    for(id item in self)
+    {
+        id result = funcBlock(item);
+        if(result)
+            [eax addObject:result];
+    }
+    return eax;// [[[self asSequence] map:funcBlock] asArray];
 }
 
 - (id)mapWithIndex:(id (^)(id, NSInteger))funcBlock {
@@ -145,8 +169,9 @@
 //    return [self takeRight:[self count] - 1];
 }
 
-- (NSMutableArray *)take:(int)n {
-    return [[[self asSequence] take:n] asArray];
+- (NSArray *)take:(int)n {
+    return [self slice:0 to:n];
+//    return [[[self asSequence] take:n] asArray];
 }
 
 - (NSMutableArray *)takeWhile:(BOOL (^)(id))funcBlock {
@@ -224,8 +249,8 @@
     Pair *keysAndValues = [self partition:TL_alternate(YES)];
     NSMutableArray *keys = keysAndValues.left;
     NSMutableArray *values = keysAndValues.right;
-    values = [values take:[keys count]];
-    keys = [keys take:[values count]];
+    values = [[values take:[keys count]] asArray];
+    keys = [[keys take:[values count]] asArray];
     NSEnumerator *valueEnumerator = [keysAndValues.right objectEnumerator];
     return [keys fold:[NSMutableDictionary dictionary] with:^(NSMutableDictionary *accumulator, id key) {
         [accumulator setObject:[valueEnumerator nextObject] forKey:key];

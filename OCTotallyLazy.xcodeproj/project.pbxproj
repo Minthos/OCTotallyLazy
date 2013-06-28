@@ -21,6 +21,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		24621C11177E02B7007CD0CA /* NSMutableArray+OCTotallyLazy.h in Headers */ = {isa = PBXBuildFile; fileRef = 24621C0F177E02B6007CD0CA /* NSMutableArray+OCTotallyLazy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24621C12177E02B7007CD0CA /* NSMutableArray+OCTotallyLazy.m in Sources */ = {isa = PBXBuildFile; fileRef = 24621C10177E02B7007CD0CA /* NSMutableArray+OCTotallyLazy.m */; };
 		AD5D05A0E1C9D688C70192F0 /* Function2.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5D0D9D52A0B68BFF9FBD57 /* Function2.m */; };
 		AD5D0610C61BC3AA9EB8D138 /* Functions.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5D03DBC64515F232FB590C /* Functions.m */; };
 		AD5D080F8DF4A4D245988717 /* Function1.h in Headers */ = {isa = PBXBuildFile; fileRef = AD5D0E4BB0F51BDC6ED6AFFA /* Function1.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -130,6 +132,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		24621C0F177E02B6007CD0CA /* NSMutableArray+OCTotallyLazy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+OCTotallyLazy.h"; sourceTree = "<group>"; };
+		24621C10177E02B7007CD0CA /* NSMutableArray+OCTotallyLazy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+OCTotallyLazy.m"; sourceTree = "<group>"; };
 		AD5D038FB113310EC3EEA18A /* Function1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Function1.m; sourceTree = "<group>"; };
 		AD5D03DBC64515F232FB590C /* Functions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Functions.m; sourceTree = "<group>"; };
 		AD5D03E3D075B182F7E0F83B /* FunctionsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FunctionsTest.m; sourceTree = "<group>"; };
@@ -323,6 +327,8 @@
 				BC7772B8151338ED00F4FF4A /* NoSuchElementException.m */,
 				BC7772B9151338ED00F4FF4A /* NSArray+OCTotallyLazy.h */,
 				BC7772BA151338ED00F4FF4A /* NSArray+OCTotallyLazy.m */,
+				24621C0F177E02B6007CD0CA /* NSMutableArray+OCTotallyLazy.h */,
+				24621C10177E02B7007CD0CA /* NSMutableArray+OCTotallyLazy.m */,
 				BC7772BB151338ED00F4FF4A /* NSDictionary+OCTotallyLazy.h */,
 				BC7772BC151338ED00F4FF4A /* NSDictionary+OCTotallyLazy.m */,
 				BC7772BD151338ED00F4FF4A /* NSSet+OCTotallyLazy.h */,
@@ -467,6 +473,7 @@
 				BC7772CF151338ED00F4FF4A /* None.h in Headers */,
 				BC7772D1151338ED00F4FF4A /* NoSuchElementException.h in Headers */,
 				BC7772D3151338ED00F4FF4A /* NSArray+OCTotallyLazy.h in Headers */,
+				24621C11177E02B7007CD0CA /* NSMutableArray+OCTotallyLazy.h in Headers */,
 				BC7772D5151338ED00F4FF4A /* NSDictionary+OCTotallyLazy.h in Headers */,
 				BC7772D7151338ED00F4FF4A /* NSSet+OCTotallyLazy.h in Headers */,
 				BC7772DA151338ED00F4FF4A /* OCTotallyLazy-Prefix.pch in Headers */,
@@ -628,6 +635,7 @@
 				BC7772D0151338ED00F4FF4A /* None.m in Sources */,
 				BC7772D2151338ED00F4FF4A /* NoSuchElementException.m in Sources */,
 				BC7772D4151338ED00F4FF4A /* NSArray+OCTotallyLazy.m in Sources */,
+				24621C12177E02B7007CD0CA /* NSMutableArray+OCTotallyLazy.m in Sources */,
 				BC7772D6151338ED00F4FF4A /* NSDictionary+OCTotallyLazy.m in Sources */,
 				BC7772D8151338ED00F4FF4A /* NSSet+OCTotallyLazy.m in Sources */,
 				BC7772DD151338ED00F4FF4A /* Option.m in Sources */,
